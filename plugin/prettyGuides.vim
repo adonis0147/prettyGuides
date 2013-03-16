@@ -7,11 +7,19 @@ if !exists('g:PrettyGuidesEnable')
 endif
 
 if !exists('g:PrettyGuidesChar')
-    if &encoding ==? 'utf-8'
+    if &encoding == 'utf-8'
         let g:PrettyGuidesChar = '¦'
     else
         let g:PrettyGuidesChar = '|'
     endif
+endif
+
+if !exists('g:PrettyGuidesTermColor')
+    let g:PrettyGuidesTermColor = 240
+endif
+
+if !exists('g:PrettyGuidesGuiColor')
+    let g:PrettyGuidesGuiColor = 'Gray30'
 endif
 
 if !exists('g:PrettyGuidesFileTypesIncluded')

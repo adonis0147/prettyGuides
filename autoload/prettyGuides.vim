@@ -3,6 +3,8 @@ function! prettyGuides#init()
     set concealcursor=nivc
     syntax sync minlines=100
     syntax sync maxlines=200
+
+    call prettyGuides#initColor()
 endfunction
 
 function! prettyGuides#getPatterns()
@@ -17,6 +19,12 @@ function! prettyGuides#getPatterns()
 
     let w:indentPattern = '/\(^\(' . w:indentPattern . '\)\+\)\@<=\s/'
     let w:headIndentPattern = '/^\s\(' . w:headIndentPattern . '\)\@=/'
+endfunction
+
+function! prettyGuides#initColor()
+    let l:termColorString = 'ctermfg=' . string(g:PrettyGuidesTermColor) . ' ctermbg=NONE'
+    let l:guiColorString = 'guifg=' . g:PrettyGuidesGuiColor . ' guibg=NONE'
+    exec 'highlight Conceal ' . l:termColorString . ' ' . l:guiColorString
 endfunction
 
 function! prettyGuides#display()
