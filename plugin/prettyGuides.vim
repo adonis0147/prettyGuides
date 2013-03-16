@@ -55,7 +55,6 @@ function! s:PrettyGuidesProcessAutocmd()
         call s:PrettyGuidesEnable()
     else
         let s:PrettyGuidesToggle = 1
-        finish
     end
 endfunction
 
