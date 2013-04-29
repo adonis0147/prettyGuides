@@ -27,7 +27,11 @@ if !exists('g:PrettyGuidesFileTypesIncluded')
 endif
 
 if !exists('g:PrettyGuidesFileTypesExcluded')
-    let g:PrettyGuidesFileTypesExcluded = ['']
+    let g:PrettyGuidesFileTypesExcluded = []
+endif
+
+if !exists('g:PrettyGuidesDefaultFileTypesExcluded')
+    let g:PrettyGuidesDefaultFileTypesExcluded = 1
 endif
 
 

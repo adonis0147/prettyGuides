@@ -39,9 +39,17 @@ function! prettyGuides#clear()
 endfunction
 
 function! prettyGuides#checkFileTypes()
+    if g:PrettyGuidesDefaultFileTypesExcluded == 1
+        let l:fileTypesExcluded = ['', 'text', 'markdown', 'tex']
+    else
+        let l:fileTypesExcluded = []
+    endif
+
     if index(g:PrettyGuidesFileTypesExcluded, &ft) != -1
         let w:FileTypesFlag = 0
     elseif len(g:PrettyGuidesFileTypesIncluded) != 0 && index(g:PrettyGuidesFileTypesIncluded, &ft) == -1
+        let w:FileTypesFlag = 0
+    elseif index(l:fileTypesExcluded, &ft) != -1
         let w:FileTypesFlag = 0
     else
         let w:FileTypesFlag = 1
