@@ -67,4 +67,4 @@ command! -bar PrettyGuidesToggle call s:PrettyGuidesToggle()
 command! -bar PrettyGuidesEnable call s:PrettyGuidesEnable()
 command! -bar PrettyGuidesDisable call s:PrettyGuidesDisable()
 
-autocmd BufWinEnter * call s:PrettyGuidesProcessAutocmd()
+autocmd FileType * call s:PrettyGuidesProcessAutocmd()
